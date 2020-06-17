@@ -1,0 +1,66 @@
+{
+  "name": "ethr-did",
+  "version": "0.0.1",
+  "description": "Create and manage DID documents for ethereum addresses",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "umd:main": "lib/index.umd.js",
+  "source": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilovelili/ethr-did.git"
+  },
+  "files": [
+    "lib",
+    "src",
+    "LICENSE",
+    "babel-preset.js",
+    ".babelrc"
+  ],
+  "scripts": {
+    "format": "prettier-standard 'src/**/*.js'",
+    "test": "./node_modules/.bin/jest",
+    "test:ci": "./node_modules/.bin/jest -u --coverage",
+    "build:js": "./node_modules/.bin/microbundle",
+    "build": "npm run format && npm run build:js && npm run test",
+    "prepare": "npm run build",
+    "debug": "node --debug-brk --inspect ./node_modules/.bin/jest -i"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@truffle/contract": "^4.2.9",
+    "babel-jest": "^26.0.1",
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "ethr-did-registry": "^0.0.3",
+    "ganache-cli": "^6.9.1",
+    "jest": "^26.0.1",
+    "microbundle": "^0.12.1",
+    "prettier-standard": "^16.3.0",
+    "regenerator-runtime": "^0.13.5",
+    "web3": "^1.2.9"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.10.2",
+    "buffer": "^5.6.0",
+    "did-jwt": "^4.3.4",
+    "did-resolver": "^2.0.1",
+    "ethjs-contract": "^0.2.3",
+    "ethjs-provider-http": "^0.1.6",
+    "ethjs-query": "^0.3.8",
+    "ethr-did-resolver": "^2.2.0"
+  }
+}
